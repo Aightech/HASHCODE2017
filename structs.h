@@ -23,4 +23,6 @@ typedef struct _cacheServer {
 	int size;
 	Endpoint** connectedEndpoints;
 	VideoWeight* video_weights;
+	int listVideo_nb;
+	Video* listVideo;
 } CacheServer;
