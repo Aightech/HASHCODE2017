@@ -4,6 +4,12 @@ typedef struct _video {
 	int size;
 } Video;
 
+typedef struct _videoWeight {
+	Video* video;
+	int weight;
+	int ratio;
+} VideoWeight;
+
 typedef struct _endpoint {
 	int uid;
 	int datacenterLatency;
@@ -18,9 +24,3 @@ typedef struct _cacheServer {
 	Endpoint** connectedEndpoints;
 	VideoWeight* video_weights;
 } CacheServer;
-
-typedef struct _videoWeight {
-	Video video;
-	int weight;
-	int ratio;
-} VideoWeight;

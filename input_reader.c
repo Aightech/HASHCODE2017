@@ -1,3 +1,5 @@
+#include <stdlib.h>
+#include <stdio.h>
 #include "structs.h"
 #include "input_reader.h"
 
@@ -32,6 +34,7 @@ void read_input(char* filename, Video** videos, CacheServer** cache_servers, End
 		c->uid = i;
 		c->size = cache_size;
 		c->connectedEndpoints = (Endpoint**)calloc(endpoints_nb, sizeof(Endpoint));
+		c->video_weights = (VideoWeight*)calloc(videos_nb, sizeof(VideoWeight));
 		cache_servers[i] = c;
 	}
 	

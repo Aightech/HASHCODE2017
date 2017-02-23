@@ -5,7 +5,7 @@ LIBS =
 LDFLAGS =
 
 # fichiers du projet
-SRC = main.c input_reader.c
+SRC = main.c input_reader.c optimization_computation.c
 OBJ = $(SRC:.c=.o)
 EXEC = main
 
@@ -14,8 +14,9 @@ EXEC = main
 all: $(EXEC)
 
 # dépendance des .h
-main.o: input_reader.h structs.h
+main.o: input_reader.h optimization_computation.h structs.h
 input_reader.o: structs.h
+optimization_computation.o: structs.h
 
 # règles de compilation
 %.o: %.c

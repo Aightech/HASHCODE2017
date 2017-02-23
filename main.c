@@ -1,5 +1,8 @@
+#include <stdlib.h>
+#include <stdio.h>
 #include "structs.h"
 #include "input_reader.h"
+#include "optimization_computation.h"
 
 int main() {
 	// general variables
@@ -20,6 +23,9 @@ int main() {
 	
 	// get file data
 	read_input(filename, videos, cache_servers, endpoints, videos_nb, cache_servers_nb, endpoints_nb, requests_desc_nb, cache_size);
+	
+	// compute all video weights
+	compute_video_weights(cache_servers, videos, videos_nb, cache_servers_nb, endpoints_nb);
 	
 	return 1;
 }
