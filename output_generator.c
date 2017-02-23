@@ -3,7 +3,7 @@
 #include "structs.h"
 #include "output_generator.h"
 
-int count_used_cache_servers(int* cache_servers_nb, CacheServer** cache_servers){
+int count_used_cache_servers(int cache_servers_nb, CacheServer** cache_servers){
 	int i;
 	int count=0;
 	for (i=0;i<cache_servers_nb;i++){
@@ -14,7 +14,7 @@ int count_used_cache_servers(int* cache_servers_nb, CacheServer** cache_servers)
 }
 		
 
-void generate_output(char* outputname, int* cache_servers_nb, CacheServer** cache_servers, int count) {
+void generate_output(char* outputname, int cache_servers_nb, CacheServer** cache_servers, int count) {
 	FILE *f = fopen(outputname, "r");
 	
 	fprintf(f, "%d\n", count);
@@ -29,8 +29,9 @@ void generate_output(char* outputname, int* cache_servers_nb, CacheServer** cach
 			}
 		}
 		
+	fclose(f);
 	}
 	
-	fclose(f);
-}
+	
+
 

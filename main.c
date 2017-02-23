@@ -13,7 +13,7 @@ int main() {
 	int videos_nb, cache_servers_nb, endpoints_nb, requests_desc_nb, cache_size;
 	// file to load
 	char* filename = "trending_today.in";
-	char* outputname = "trending_today_out.txt"
+	char* outputname = "trending_today_out.txt";
 
 	// get the main data: the size of the different structures arrays
 	read_main_data(filename, &videos_nb, &cache_servers_nb, &endpoints_nb, &requests_desc_nb, &cache_size);
