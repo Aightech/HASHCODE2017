@@ -1,4 +1,8 @@
-void quickSort( int a[], int l, int r)
+#include "structs.h"
+#include "qsort.h"
+
+
+void quickSort1( VideoWeight a[], int l, int r)
 {
    int j;
 
@@ -14,19 +18,23 @@ void quickSort( int a[], int l, int r)
 
 
 
-int partition( int a[], int l, int r) {
-   int pivot, i, j, t;
-   pivot = a[l];
+int partition1( VideoWeight a[], int l, int r) {
+   int pivot, i, j;
+   VideoWeight t;
+   Video* video;
+   pivot = a[l].weight;
    i = l; j = r+1;
 		
    while( 1)
    {
-   	do ++i; while( a[i] <= pivot && i <= r );
-   	do --j; while( a[j] > pivot );
+   	do ++i; while( a[i].weight <= pivot && i <= r );
+   	do --j; while( a[j].weight > pivot );
    	if( i >= j ) break;
+   	
    	t = a[i]; a[i] = a[j]; a[j] = t;
    }
-   t = a[l]; a[l] = a[j]; a[j] = t;
+   t = a[l]; a[l]= a[j]; a[j] = t;
+   
    return j;
 }
 
