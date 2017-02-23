@@ -2,16 +2,18 @@
 typedef struct _video {
 	int uid;
 	int size;
-} Video
+} Video;
 
 typedef struct _endpoint {
-	int serverLatence;
+	int uid;
+	int datacenterLatency;
 	int nbOfCacheServers;
-	int* cacheServersLatences;
-} Endpoint
+	int* cacheServersLatencies;
+	int* video_requests;
+} Endpoint;
 
-typedef struct _server {
+typedef struct _cacheServer {
 	int uid;
 	int size;
-	int cache;
-} Video
+	Endpoint** connectedEndpoints;
+} CacheServer;
